@@ -1,0 +1,34 @@
+{
+	"manifest_version": 2,
+	"name": "Master to main",
+	"version": "2.0.0",
+	"description": "Master to main",
+	"icons":
+	{
+		"16": "images/favicon.png",
+		"48": "images/favicon.png",
+		"128": "images/favicon.png"
+	},
+	"browser_action": 
+	{
+		"default_icon": "images/favicon.png",
+		"default_title": "Master to main",
+		"default_popup": "html/popup.html"
+	},
+	"content_scripts": 
+	[
+		{
+			"matches": ["http://github.com/*", "https://github.com/*"],
+			"js": ["js/base.js"],
+			"run_at": "document_idle"
+		}
+  ],
+	"permissions":
+	[
+		"tabs",
+		"http://*/*", 
+		"https://*/*"
+	],
+	"web_accessible_resources": ["js/cat-th.js"],
+	"homepage_url": "https://github.com/CasterWx"
+}
